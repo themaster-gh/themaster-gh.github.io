@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>博客天地 | DragonTravel&#39;s blog</title>
+    <title>Android ADB 问题 | DragonTravel&#39;s blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="DragonTravel">
     
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in ">
+    <meta name="description" content="遇到问题描述：运行android程序控制台输出：    [2012-07-18 16:18:26 - ] The connection to adb is down, and a severe error has occured.    [2012-07-18 16:18:26 - ] You mu">
     
     
     
@@ -69,15 +69,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/07/14/hello-world/" title="博客天地" itemprop="url">博客天地</a>
+      <a href="/2016/07/15/markdown-first-use/" title="Android ADB 问题" itemprop="url">Android ADB 问题</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="DragonTravel">DragonTravel</a>
     </p>
   <p class="article-time">
-    <time datetime="2016-07-14T11:17:27.822Z" itemprop="datePublished">2016-07-14</time>
-    更新日期:<time datetime="2016-07-14T12:01:40.859Z" itemprop="dateModified">2016-07-14</time>
+    <time datetime="2016-07-15T13:18:09.000Z" itemprop="datePublished">2016-07-15</time>
+    更新日期:<time datetime="2016-07-15T13:52:39.225Z" itemprop="dateModified">2016-07-15</time>
     
   </p>
 </header>
@@ -86,28 +86,34 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+		
 		</div>
 		
-		<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ 开始博客之旅</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+		<p>遇到问题描述：<br>运行android程序控制台输出：<br>    [2012-07-18 16:18:26 - ] The connection to adb is down, and a severe error has occured.<br>    [2012-07-18 16:18:26 - ] You must restart adb and Eclipse.<br>    [2012-07-18 16:18:26 - ] Please ensure that adb is correctly located at ‘D:\java\sdk\platform-tools\adb.exe’ and can be executed.<br>解决问题：<br>5037为adb默认端口 查看该端口情况如下：<br>    netstat -aon|findstr “5037”<br>    TCP    127.0.0.1:5037         0.0.0.0:0              LISTENING       6540</p>
+<p>发现6540占用了 5037端口，继续查看6540的task，发现是wandoujia  .如下所示:<br>    tasklist|findstr “6540”</p>
+<pre><code>wandoujia_daemon.exe          6540 Console 
+</code></pre><p>接下来问题就好解决了，在任务管理器kill掉wandoujia_daemon.exe ，运行android程序，ok .</p>
+<ol>
+<li>关闭豌豆荚进程</li>
+<li>adb kill-server</li>
+<li>adb start-server</li>
+<li>重启Eclipse</li>
+</ol>
   
 	</div>
 		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/Android资料/">Android资料</a>
+  </div>
 
 
 
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2016/07/14/hello-world/" data-title="博客天地 | DragonTravel&#39;s blog" data-tsina="null" class="share clearfix">
+  <div data-url="http://yoursite.com/2016/07/15/markdown-first-use/" data-title="Android ADB 问题 | DragonTravel&#39;s blog" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -116,14 +122,14 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2016/07/15/markdown-first-use/" title="Android ADB 问题">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  Android ADB 问题</span>
+
+<div class="next">
+<a href="/2016/07/14/hello-world/"  title="博客天地">
+ <strong>NEXT:</strong><br/> 
+ <span>博客天地
+</span>
 </a>
 </div>
-
 
 </nav>
 
@@ -137,7 +143,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+  
   </div>
 
 <div id="asidepart">
